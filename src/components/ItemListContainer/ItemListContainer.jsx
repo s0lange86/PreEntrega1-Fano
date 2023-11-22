@@ -7,11 +7,8 @@ const ItemListContainer = ({ products }) => {
         <div className='totalCards-style'>
             {products.map((product) => {
                 return (
-                    <Card key={product.id} style={{ width: "280px", margin: "10px", height: "400px" }}>
-                        <div style={{height:'400px'}}>
-                        <Link to={`/item/${product.id}`}><Card.Img variant="top" src={product.thumbnail}/></Link>
-                        </div>
-                        {/* <Card.Img variant="top" src={product.thumbnail} className='imageCard-style' /> */}
+                    <Card key={product.id} style={{ width: "280px", margin: "10px", height: "400px" }}>                        
+                        <Link to={`/item/${product.id}`}><Card.Img variant="top" src={product.thumbnail} /></Link>                    
                         <Card.Body>
                             <Card.Title>{product.title}</Card.Title>
                             <Card.Text>{product.description}</Card.Text>

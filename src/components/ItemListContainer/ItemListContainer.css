@@ -5,13 +5,10 @@
     justify-content: space-around;
 }
 
-.card-style {
-    width: 280px;
-    margin: 10px;
+.imageCard-style {
     height: 400px;
 }
 
-
-.imageCard-style {
-    height: 50%;
+.card-img, .card-img-bottom, .card-img-top{
+    height: 200px;
 }
