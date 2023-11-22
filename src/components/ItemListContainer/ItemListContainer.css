@@ -1,4 +1,17 @@
-.titulo-style {
-    text-align: center;
-    margin: 1rem;
+.totalCards-style {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-style {
+    width: 280px;
+    margin: 10px;
+    height: 400px;
+}
+
+
+.imageCard-style {
+    height: 50%;
 }

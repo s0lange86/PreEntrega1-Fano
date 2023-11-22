@@ -1,9 +1,24 @@
+import { Card } from 'react-bootstrap';
 import './ItemListContainer.css';
+import { Link } from 'react-router-dom';
 
-const ItemListContainer = ({saludo}) => {
+const ItemListContainer = ({ products }) => {
     return (
-        <div>
-            <h1 className="titulo-style">{saludo}</h1>
+        <div className='totalCards-style'>
+            {products.map((product) => {
+                return (
+                    <Card key={product.id} style={{ width: "280px", margin: "10px", height: "400px" }}>
+                        <div style={{height:'400px'}}>
+                        <Link to={`/item/${product.id}`}><Card.Img variant="top" src={product.thumbnail}/></Link>
+                        </div>
+                        {/* <Card.Img variant="top" src={product.thumbnail} className='imageCard-style' /> */}
+                        <Card.Body>
+                            <Card.Title>{product.title}</Card.Title>
+                            <Card.Text>{product.description}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                );
+            })}
         </div>
     )
 }

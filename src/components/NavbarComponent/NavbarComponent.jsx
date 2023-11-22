@@ -4,20 +4,29 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
 import './NavbarComponent.css';
+import { Link } from 'react-router-dom';
 
 function NavbarComponent() {
+    
     return (
         <Navbar bg="dark" data-bs-theme="dark" sticky="top" expand="lg" className="bg-body-tertiary navbar-style">
             <Container>
-                <Navbar.Brand href="#home" className='brand-style'>Librit0s!</Navbar.Brand>
+                <Navbar.Brand>
+                    <Link className='brand-style' to={'/'}>Tecno Sh0p!</Link>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Productos</Nav.Link>
+                        <Nav.Link >
+                            <Link style={{textDecoration: 'none', color:'rgba(255, 255, 255, 0.55)'}} to={'/'}>Home</Link>
+                        </Nav.Link>
                         <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Libros</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Ebooks</NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Link className='textNavbar-style' to={'/category/laptops'}>Laptops</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Link className='textNavbar-style' to={'/category/smartphones'}>Smartphones</Link>
+                            </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <CartWidgetComponent />
